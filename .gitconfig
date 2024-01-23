@@ -1,0 +1,28 @@
+[core]
+	editor = \"${home}\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[user]
+	name = first last
+	email = firstlast@my.email
+[http]
+	sslVerify = true
+[pull]
+	rebase = true
+[alias]
+	st = "status -s"
+	ll = "log --pretty=oneline --abbrev-commit"
+	last = "log -1 HEAD"
+	lastst = "log -1 HEAD --stat"
+	aa = "add ."
+	cm = "commit -m"
+	cam = "commit -am"
+	cama = "commit --amend -am"
+	logpretty = "log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --date=short"
+	co = checkout
+	bv = !git fetch -p && git branch -va
+	alias = config --get-regexp alias.*
+	pmr = !git checkout main && git pull && git checkout - && git rebase main && git push
+	pmr2 = !git checkout master && git pull && git checkout - && git rebase master && git push
+	um = !git co main && git fetch -p && git pull && git co - && git rebase main
+	um2 = !git co master && git fetch -p && git pull && git co - && git rebase master
+[push]
+	autoSetupRemote = true
